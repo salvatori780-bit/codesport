@@ -11,7 +11,7 @@ export default defineConfig({
     figmaAssetPlugin() // Handle figma:asset imports
   ],
   build: {
-    outDir: 'dist',
+    outDir: 'build',
     sourcemap: false,
     minify: 'esbuild',
     rollupOptions: {
