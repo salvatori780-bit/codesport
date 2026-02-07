@@ -1,0 +1,56 @@
+{
+  "name": "francesco-salvatori-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive fashion portfolio for Francesco Salvatori",
+  "author": "Francesco Salvatori <salvatori780@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/USERNAME/francesco-salvatori-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "fashion",
+    "design",
+    "react",
+    "typescript",
+    "tailwind"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "verify": "bash verify-deployment.sh",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "motion": "^11.15.0",
+    "lucide-react": "^0.469.0",
+    "html2canvas": "^1.4.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "tailwindcss": "^4.1.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "@tailwindcss/vite": "^4.1.0",
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "typescript-eslint": "^8.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
