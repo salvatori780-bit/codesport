@@ -1,0 +1,171 @@
+╔════════════════════════════════════════════════════════════╗
+║                                                            ║
+║   🖼️  SOSTITUISCI IMMAGINI FIGMA → GITHUB                 ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ QUICK START (1 COMANDO)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+npm run setup-images
+
+
+Questo comando:
+1. Scarica 98 immagini PNG da GitHub
+2. Le salva in public/images/projects/
+3. Aggiorna tutti gli import automaticamente
+4. Crea backup del codice
+
+Tempo: ~2-3 minuti
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📋 ALTERNATIVA: STEP-BY-STEP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Scarica Immagini
+┌──────────────────────────────────────────────────────┐
+│ npm run download-images                              │
+└──────────────────────────────────────────────────────┘
+
+STEP 2: Verifica Download
+┌──────────────────────────────────────────────────────┐
+│ ls public/images/projects/*.png | wc -l              │
+│                                                      │
+│ Dovrebbe mostrare il numero di immagini scaricate   │
+└──────────────────────────────────────────────────────┘
+
+STEP 3: Aggiorna Import
+┌──────────────────────────────────────────────────────┐
+│ npm run update-imports                               │
+└──────────────────────────────────────────────────────┘
+
+STEP 4: Testa
+┌──────────────────────────────────────────────────────┐
+│ npm run dev                                          │
+│                                                      │
+│ Apri: http://localhost:3000                         │
+└──────────────────────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🐍 SE NODE.JS NON FUNZIONA: USA PYTHON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+python3 scripts/download-github-images.py
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 VERIFICA SUCCESSO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Immagini Scaricate
+┌──────────────────────────────────────────────────────┐
+│ ls -lh public/images/projects/                       │
+│                                                      │
+│ Dovresti vedere molti file .png                     │
+└──────────────────────────────────────────────────────┘
+
+✅ Import Aggiornati
+┌──────────────────────────────────────────────────────┐
+│ grep "figma:asset" components/ProjectDetail.tsx      │
+│                                                      │
+│ Nessun risultato = Tutto aggiornato! ✅              │
+└──────────────────────────────────────────────────────┘
+
+✅ App Funzionante
+┌──────────────────────────────────────────────────────┐
+│ npm run dev                                          │
+│ Visita tutti i 6 progetti                           │
+│ Verifica che le immagini si carichino               │
+└──────────────────────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📦 REPOSITORY IMMAGINI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+https://github.com/salvatori780-bit/imagesportfoliooo
+Percorso: prog. figma/
+Tipo: PNG images
+Numero: ~98 files
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🚨 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Download fallisce
+→ Soluzione 1: Usa Python script
+→ Soluzione 2: Clona repository manualmente
+
+Manuale:
+┌──────────────────────────────────────────────────────┐
+│ cd /tmp                                              │
+│ git clone https://github.com/salvatori780-bit/      │
+│   imagesportfoliooo.git                             │
+│ cp imagesportfoliooo/"prog. figma"/*.png \           │
+│   /percorso/tuo/progetto/public/images/projects/    │
+└──────────────────────────────────────────────────────┘
+
+❌ Import non aggiornati
+→ Controlla che i nomi file matchino gli hash
+→ Esegui manualmente find & replace:
+  Trova: from 'figma:asset/
+  Sostituisci: from '/images/projects/
+
+❌ Immagini non si caricano
+→ Riavvia dev server: npm run dev
+→ Verifica path: /images/projects/[filename].png
+→ Controlla console per errori
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ CHECKLIST FINALE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Prima di commitare:
+
+□ Immagini in public/images/projects/
+□ Import aggiornati (no figma:asset)
+□ npm run dev funziona
+□ Tutte le immagini visibili
+□ Nessun errore console
+□ npm run build completa
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🚀 DEPLOY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Dopo verifica:
+┌──────────────────────────────────────────────────────┐
+│ git add .                                            │
+│ git commit -m "feat: Replace figma assets with      │
+│   real GitHub images"                               │
+│ git push origin main                                │
+└──────────────────────────────────────────────────────┘
+
+Vercel auto-deploya! 🎉
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 DOCUMENTAZIONE COMPLETA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Leggi: REPLACE_IMAGES_GUIDE.md
+
+Per dettagli completi su:
+- Metodi alternativi
+- Troubleshooting avanzato
+- Ottimizzazione immagini
+- Note tecniche
+
+
+╔════════════════════════════════════════════════════════════╗
+║                                                            ║
+║   👉 INIZIA ORA: npm run setup-images                     ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
