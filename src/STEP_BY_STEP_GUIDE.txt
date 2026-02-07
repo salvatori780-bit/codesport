@@ -1,0 +1,257 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║   🎯 GUIDA STEP-BY-STEP - FIX DEPLOYMENT VERCEL              ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📋 DIAGNOSI PROBLEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ ERRORE VERCEL:
+   "No Output Directory named 'dist' found"
+
+🔍 CAUSA:
+   • Build genera: build/
+   • Vercel cerca: dist/
+   • Mismatch = Deploy fallito
+
+✅ FILE LOCALI:
+   • vercel.json: outputDirectory: "build" ✓
+   • vite.config.ts: outDir: 'build' ✓
+
+❌ GITHUB:
+   • Commit: 4113f92 (vecchio)
+   • vercel.json ancora con "dist"
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ SOLUZIONE A: VERCEL DASHBOARD (30 SECONDI)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Apri Browser
+   ┌─────────────────────────────────────────────┐
+   │ https://vercel.com/dashboard                │
+   └─────────────────────────────────────────────┘
+
+STEP 2: Trova Progetto
+   ┌─────────────────────────────────────────────┐
+   │ Cerca: "codesport"                          │
+   │    oppure                                   │
+   │ Cerca: "francesco-salvatori-portfolio"      │
+   │                                             │
+   │ [Clicca sul progetto]                       │
+   └─────────────────────────────────────────────┘
+
+STEP 3: Vai su Settings
+   ┌─────────────────────────────────────────────┐
+   │  Overview | Deployments | Settings          │
+   │                           ^^^^^^^^           │
+   │                        [CLICCA QUI]         │
+   └─────────────────────────────────────────────┘
+
+STEP 4: Trova Build Settings
+   ┌─────────────────────────────────────────────┐
+   │ Menu laterale:                              │
+   │   • General          ← [CLICCA QUI]         │
+   │   • Domains                                 │
+   │   • Environment Variables                   │
+   │   • Git                                     │
+   └─────────────────────────────────────────────┘
+
+STEP 5: Modifica Output Directory
+   ┌─────────────────────────────────────────────┐
+   │ Build & Development Settings                │
+   │                                             │
+   │ Root Directory:        ./                   │
+   │ Build Command:         npm run build        │
+   │ Output Directory:      dist    [Edit]       │
+   │                        ^^^^                 │
+   │                     [CLICCA EDIT]           │
+   └─────────────────────────────────────────────┘
+
+STEP 6: Cambia Valore
+   ┌─────────────────────────────────────────────┐
+   │ Output Directory                            │
+   │ ┌─────────────────────────────────┐         │
+   │ │ build                           │ ← SCRIVI │
+   │ └─────────────────────────────────┘         │
+   │                                             │
+   │ [Cancel]  [Save] ← [CLICCA SAVE]            │
+   └─────────────────────────────────────────────┘
+
+STEP 7: Redeploy
+   ┌─────────────────────────────────────────────┐
+   │  Overview | Deployments | Settings          │
+   │             ^^^^^^^^^^^                     │
+   │          [CLICCA QUI]                       │
+   └─────────────────────────────────────────────┘
+   
+   Poi:
+   ┌─────────────────────────────────────────────┐
+   │ Latest Deployment (Failed)                  │
+   │                                             │
+   │ [...]  ← [CLICCA TRE PUNTINI]               │
+   │   │                                         │
+   │   ├─ View Deployment                        │
+   │   ├─ Redeploy            ← [CLICCA]         │
+   │   └─ Delete                                 │
+   └─────────────────────────────────────────────┘
+
+STEP 8: Conferma Redeploy
+   ┌─────────────────────────────────────────────┐
+   │ Redeploy to Production?                     │
+   │                                             │
+   │ This will create a new deployment           │
+   │                                             │
+   │ [Cancel]  [Redeploy] ← [CLICCA]             │
+   └─────────────────────────────────────────────┘
+
+STEP 9: Attendi Build
+   ┌─────────────────────────────────────────────┐
+   │ Building...                                 │
+   │                                             │
+   │ ▓▓▓▓▓▓▓▓░░░░░░░░  45%                       │
+   │                                             │
+   │ Attendi ~60 secondi                         │
+   └─────────────────────────────────────────────┘
+
+STEP 10: ✅ DEPLOY SUCCESS!
+   ┌─────────────────────────────────────────────┐
+   │ ✓ Deployment Ready                          │
+   │                                             │
+   │ 🌐 Visit: https://codesport.vercel.app      │
+   │                                             │
+   │ [Visit] ← [CLICCA PER VEDERE SITO]          │
+   └─────────────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔄 SOLUZIONE B: GIT PUSH (5 MINUTI)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Apri Terminale
+   ┌─────────────────────────────────────────────┐
+   │ $ cd /percorso/al/tuo/progetto              │
+   └─────────────────────────────────────────────┘
+
+STEP 2: Verifica Modifiche
+   ┌─────────────────────────────────────────────┐
+   │ $ git status                                │
+   │                                             │
+   │ Output:                                     │
+   │   modified: vercel.json                     │
+   │   modified: vite.config.ts                  │
+   │   deleted:  eslint.config.js                │
+   │   new file: .npmrc                          │
+   │   new file: plugins/figmaAssetPlugin.ts     │
+   └─────────────────────────────────────────────┘
+
+STEP 3: Aggiungi File
+   ┌─────────────────────────────────────────────┐
+   │ $ git add .                                 │
+   └─────────────────────────────────────────────┘
+
+STEP 4: Commit
+   ┌─────────────────────────────────────────────┐
+   │ $ git commit -m "Fix: Complete deployment   │
+   │   configuration + optimizations"            │
+   └─────────────────────────────────────────────┘
+
+STEP 5: Push
+   ┌─────────────────────────────────────────────┐
+   │ $ git push origin main                      │
+   │                                             │
+   │ Counting objects: 15, done.                 │
+   │ Writing objects: 100% (15/15), done.        │
+   │ Total 15, reused 0                          │
+   └─────────────────────────────────────────────┘
+
+STEP 6: Vercel Auto-Deploy
+   ┌─────────────────────────────────────────────┐
+   │ Vercel rileverà il nuovo commit             │
+   │ e avvierà automaticamente il build          │
+   │                                             │
+   │ Attendi ~2-3 minuti                         │
+   └─────────────────────────────────────────────┘
+
+STEP 7: ✅ DEPLOY SUCCESS!
+   ┌─────────────────────────────────────────────┐
+   │ Riceverai email da Vercel:                  │
+   │ "Your deployment is ready"                  │
+   │                                             │
+   │ 🌐 https://codesport.vercel.app             │
+   └─────────────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 COSA ASPETTARSI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Build Log di Successo:
+┌─────────────────────────────────────────────────────┐
+│ ✓ Cloning repository               9s               │
+│ ✓ Installing dependencies         21s               │
+│   added 232 packages                                │
+│ ✓ Running build                   3.88s             │
+│   vite v6.3.5 building for production...            │
+│   ✓ 2097 modules transformed                        │
+│   ✓ build/index.html              0.45 kB           │
+│   ✓ build/assets/index.js         564.96 kB         │
+│   ✓ build/assets/index.css        4.63 kB           │
+│   ✓ 98 PNG images                                   │
+│ ✓ Deployment ready                                  │
+│                                                     │
+│ 🌐 https://codesport.vercel.app                     │
+└─────────────────────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💡 RACCOMANDAZIONI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ USA SOLUZIONE A (Dashboard):
+   • Più veloce (30 sec vs 5 min)
+   • Non richiede conoscenza Git
+   • Effetto immediato
+   • Zero rischi
+
+⚠️  OPPURE Soluzione B (Git):
+   • Richiede Git installato
+   • Sincronizza anche GitHub
+   • Più tempo richiesto
+   • Soluzione più "professionale"
+
+🎯 DOPO IL FIX:
+   • Fai Git push per sincronizzare (opzionale)
+   • Verifica sito live
+   • Testa tutte le funzionalità
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🆘 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Se ancora fallisce dopo dashboard fix:
+   1. Clear Vercel build cache
+   2. Controlla che Output Directory sia "build"
+   3. Prova Git push come backup
+
+❌ Se Git push fallisce:
+   1. Verifica di essere sul branch main
+   2. Verifica di avere permessi sul repo
+   3. Prova con dashboard invece
+
+❌ Se build è lento:
+   Normale! 98 immagini PNG sono pesanti
+   Tempo tipico: 30-60 secondi
+
+
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║   👉 INIZIA CON SOLUZIONE A - VAI SU VERCEL DASHBOARD        ║
+║                                                               ║
+║   🌐 https://vercel.com/dashboard                            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝

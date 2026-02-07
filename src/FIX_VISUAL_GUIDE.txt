@@ -1,0 +1,92 @@
+╔════════════════════════════════════════════════════════════╗
+║  🚨 FIX IMMEDIATO - CAMBIA SOLO 1 SETTING SU VERCEL       ║
+╚════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────┐
+│ ⚡ PROBLEMA                                                  │
+├─────────────────────────────────────────────────────────────┤
+│ Build genera:  build/                                       │
+│ Vercel cerca:  dist/   ❌                                    │
+│                                                             │
+│ Commit GitHub: 4113f92 (VECCHIO - senza fix)               │
+└───────────────────────────────────────────────────────────���─┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ ✅ SOLUZIONE 1: VERCEL DASHBOARD (30 SECONDI)               │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ 1. https://vercel.com/dashboard                            │
+│                                                             │
+│ 2. Clicca sul progetto "codesport"                         │
+│                                                             │
+│ 3. Settings → General → Build & Development Settings       │
+│                                                             │
+│ 4. Output Directory: dist  →  build                        │
+│                      ^^^^      ^^^^^                        │
+│                    (vecchio) (NUOVO)                        │
+│                                                             │
+│ 5. Save → Deployments → "..." → Redeploy                   │
+│                                                             │
+│ 6. ✅ FATTO! Aspetta 60 secondi → SITO LIVE                │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ 🔄 SOLUZIONE 2: GIT PUSH (5 MINUTI)                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ $ git add .                                                 │
+│ $ git commit -m "Fix: Output directory build"              │
+│ $ git push origin main                                      │
+│                                                             │
+│ Aspetta che Vercel rilevi il nuovo commit e rebuildi       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ 📊 COSA ASPETTARSI DOPO IL FIX                              │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ ✓ npm install --legacy-peer-deps  (21s)                    │
+│ ✓ vite build                       (3.8s)                  │
+│ ✓ 2097 modules transformed         ✅                       │
+│ ✓ Output: build/index.html         ✅                       │
+│ ✓ Output: build/assets/*           ✅                       │
+│ ✓ Vercel reads: build/             ✅                       │
+│ ✓ Deploy success!                  🎉                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ ⚠️  PERCHÉ CONTINUA A FALLIRE?                              │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ Il commit su GitHub è VECCHIO (4113f92)                    │
+│                                                             │
+│ Vercel clona:  git@github.com:salvatori780-bit/codesport   │
+│ Branch: main                                                │
+│ Commit: 4113f92  ← QUESTO NON HA IL FIX!                    │
+│                                                             │
+│ File locale vercel.json è corretto, ma NON è su GitHub!    │
+│                                                             │
+│ DEVI: Pushare su GitHub o modificare Vercel Dashboard      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ 🎯 RACCOMANDAZIONE                                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ USA: Vercel Dashboard (Soluzione 1)                        │
+│                                                             │
+│ PERCHÉ:                                                     │
+│ • Fix in 30 secondi vs 5 minuti                            │
+│ • Non richiede Git                                         │
+│ • Effetto immediato                                        │
+│ • Nessun rischio di errori                                │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════╗
+║  👉 AZIONE: Vai su vercel.com → Settings → Output: build  ║
+╚════════════════════════════════════════════════════════════╝

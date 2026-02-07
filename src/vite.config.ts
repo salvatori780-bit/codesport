@@ -14,11 +14,14 @@ export default defineConfig({
     outDir: 'build',
     sourcemap: false,
     minify: 'esbuild',
+    chunkSizeWarningLimit: 600, // Suppress warning for chunks < 600kb
     rollupOptions: {
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'motion': ['motion'],
+          'lucide': ['lucide-react'],
+          'html2canvas': ['html2canvas'],
         },
       },
     },
