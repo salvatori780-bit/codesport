@@ -24,7 +24,9 @@
     "type-check": "tsc --noEmit",
     "download-images": "node scripts/download-github-images.js",
     "update-imports": "node scripts/update-image-imports.js",
-    "setup-images": "npm run download-images && npm run update-imports"
+    "setup-images": "npm run download-images && npm run update-imports",
+    "setup-images-bash": "bash scripts/setup-github-images.sh",
+    "replace-imports": "bash scripts/replace-imports.sh"
   },
   "dependencies": {
     "react": "^18.3.1",

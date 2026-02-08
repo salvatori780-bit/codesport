@@ -1,0 +1,187 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🎯 SETUP IMMAGINI GITHUB - PRONTO!                     ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ METODO 1: AUTOMATICO CON BASH (RACCOMANDATO)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+bash scripts/setup-github-images.sh
+
+OPPURE:
+
+npm run setup-images-bash
+
+
+Questo script:
+✅ Clona il repository GitHub
+✅ Copia tutte le 98 immagini PNG
+✅ Le salva in public/images/projects/
+✅ Esegue replace-imports.sh automaticamente
+✅ Sostituisce figma:asset → /images/projects/
+✅ Crea backup automatico
+✅ Mostra report completo
+
+Tempo: ~1-2 minuti ⚡
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📋 METODO 2: SOLO REPLACE IMPORT (SE HAI GIÀ LE IMMAGINI)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se hai già scaricato le immagini PNG in public/images/projects/,
+esegui solo il replace degli import:
+
+bash scripts/replace-imports.sh
+
+OPPURE:
+
+npm run replace-imports
+
+
+Questo sostituisce:
+Da:   import img from 'figma:asset/[hash].png';
+A:    import img from '/images/projects/[hash].png';
+
+File modificato: components/ProjectDetail.tsx
+Backup creato:   components/ProjectDetail.tsx.backup
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🐍 METODO 3: PYTHON + BASH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se preferisci Python per il download:
+
+python3 scripts/download-github-images.py
+bash scripts/replace-imports.sh
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 VERIFICA DOPO L'ESECUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Conta immagini scaricate:
+   ls public/images/projects/*.png | wc -l
+   
+   Dovrebbe mostrare ~98
+
+2. Verifica import sostituiti:
+   grep -c "/images/projects/" components/ProjectDetail.tsx
+   
+   Dovrebbe mostrare ~98
+
+3. Verifica nessun figma:asset rimanente:
+   grep "figma:asset" components/ProjectDetail.tsx
+   
+   Nessun output = Successo! ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🧪 TESTA L'APPLICAZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+npm run dev
+
+Apri: http://localhost:3000
+
+Controlla:
+□ Tutte le immagini si caricano
+□ Nessun placeholder grigio
+□ Nessun errore in console
+□ Tutti i 6 progetti funzionano
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📦 DETTAGLI TECNICI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Repository Source:
+https://github.com/salvatori780-bit/imagesportfoliooo
+Percorso: prog. figma/
+Files: *.png (~98 immagini)
+
+Destinazione Locale:
+public/images/projects/[hash].png
+
+Import Transformation:
+PRIMA:  import img from 'figma:asset/947b1480...png';
+DOPO:   import img from '/images/projects/947b1480...png';
+
+File Modificato:
+components/ProjectDetail.tsx
+
+Backup Automatico:
+components/ProjectDetail.tsx.backup
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🚀 DOPO IL SETUP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Testa locale (IMPORTANTE):
+   npm run dev
+   
+2. Verifica build:
+   npm run build
+   
+3. Se tutto OK, commit:
+   git add public/images/projects/
+   git add components/ProjectDetail.tsx
+   git commit -m "feat: Add real images from GitHub"
+   git push origin main
+
+4. Vercel auto-deploya! ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🛠️ TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Script non eseguibile:
+   chmod +x scripts/setup-github-images.sh
+   chmod +x scripts/replace-imports.sh
+
+❌ Git clone fallisce:
+   Scarica manualmente il repo e copia i file PNG
+
+❌ sed non funziona (Mac):
+   Lo script usa sed -i.backup che funziona su Mac e Linux
+
+❌ Immagini non si caricano:
+   Riavvia dev server: Ctrl+C → npm run dev
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 SCRIPT DISPONIBILI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Setup Completo (Bash):
+npm run setup-images-bash
+→ Download + Replace in 1 comando
+
+Setup Completo (Node.js):
+npm run setup-images
+→ Alternativa Node.js
+
+Solo Replace Import:
+npm run replace-imports
+→ Usa lo script bash che hai creato
+
+Solo Download:
+npm run download-images
+→ Scarica solo le immagini
+
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   👉 ESEGUI ORA:                                          ║
+║                                                           ║
+║   bash scripts/setup-github-images.sh                    ║
+║                                                           ║
+║   Tempo: 1-2 minuti ⏱️                                    ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝

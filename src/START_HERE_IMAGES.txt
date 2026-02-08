@@ -1,0 +1,83 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🎯 INIZIA QUI - SETUP IMMAGINI GITHUB                  ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ ESEGUI QUESTO COMANDO ADESSO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+bash scripts/setup-github-images.sh
+
+
+Questo è tutto! ⚡
+
+Il comando:
+1. Scarica 98 immagini PNG da GitHub
+2. Le salva in public/images/projects/
+3. Sostituisce TUTTI i 98 import automaticamente
+4. Da: figma:asset/[hash].png
+   A:  /images/projects/[hash].png
+5. Crea backup di sicurezza
+6. Mostra report completo
+
+Tempo: 1-2 minuti
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 DOPO L'ESECUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Verifica successo:
+
+   grep "figma:asset" components/ProjectDetail.tsx
+
+   Nessun risultato? ✅ PERFETTO!
+
+
+2. Testa l'app:
+
+   npm run dev
+
+   Apri http://localhost:3000
+   Controlla che tutte le immagini si caricano
+
+
+3. Se tutto OK, commit:
+
+   git add .
+   git commit -m "feat: Add real images from GitHub"
+   git push origin main
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 DOCUMENTAZIONE COMPLETA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ESEGUI_SETUP_IMMAGINI.txt  → Comandi rapidi
+SETUP_COMPLETO.md          → Documentazione completa
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🛠️ ALTERNATIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Con npm:
+npm run setup-images-bash
+
+Solo replace (se hai già le immagini):
+npm run replace-imports
+
+Node.js invece di bash:
+npm run setup-images
+
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   👉 COPIA & INCOLLA:                                     ║
+║                                                           ║
+║   bash scripts/setup-github-images.sh                    ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
