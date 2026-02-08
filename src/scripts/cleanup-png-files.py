@@ -1,0 +1,232 @@
+#!/usr/bin/env python3
+"""
+CLEANUP FILE PNG - Verifica ed elimina file PNG non necessari
+Ora che le immagini sono caricate da GitHub, i file locali possono essere rimossi
+"""
+
+import os
+import glob
+from pathlib import Path
+
+print("╔═══════════════════════════════════════════════════════════╗")
+print("║                                                           ║")
+print("║   🗑️  CLEANUP FILE PNG - Eliminazione Files             ║")
+print("║                                                           ║")
+print("╚═══════════════════════════════════════════════════════════╝\n")
+
+# Lista degli hash da eliminare (98 immagini)
+PNG_HASHES = [
+    # Graphics Gallery
+    "947b1480fd2c27cbe944c20974d59f6ee50e2436",
+    "67c1d5df6152c1f7687ce984fd60aba6d269b04a",
+    "be62aec909ecd9c2a33f69d2435b5c78fb5287e3",
+    "2565569d5045bbdc037d9657cff9d89005de78e5",
+    "dc534b792b0d338dc7bc2b27065eb9f471334dc2",
+    "8edff57b16beb14c2ea6421668fa71a244bf9d9c",
+    
+    # Marcel Project
+    "04d470ea235961b181e9f8e76df4a88df44ddd7f",
+    "78cc8121f7f0bfabae7d7e27f086445050a13024",
+    "03ab7bda2b8830582eaf387f56a7000a6a8e87d6",
+    
+    # Prigionieri Project
+    "267fb24c81eab5a763df6ff9cbfc156ccd47fd16",
+    "e0ee7d605cdce8368bd0f37ad1067c87cfb92517",
+    "8841b8980b55ae583f91808ba5296810558afc0c",
+    "827a7c43d3b9726a8e3b3c34068d16cada00a278",
+    "ae9095b4b79670b547795a27344bfbb1c1371bcb",
+    "9f69aef6ba94980ec094ccf85a2f76e1c8f4442f",
+    "5c36cb5b169722c6e6fdd053bcda4f80d86e2803",
+    "02ac84fbc553c23f410c592569e7a9ab98f01da0",
+    "95164f811ef1fb5598130ada0b917f2e066fefbd",
+    "a9d6601be4fa3e71b930add370c78cc92e75ab11",
+    
+    # Gladio Project
+    "e453ea91ddd57dea8dd86b2977ce20d4c7b8815b",
+    "7e2a7a5a23e0b7d01cf8186841caff37e8ca5e35",
+    "aa48c2c3eaf9fe81a88fb45dc18fba8b533e50ca",
+    "d6d71f9f16754fa9e7af06c42dd3def5e6aaea83",
+    "2c49b8d2fdf27f51b6aedc27e52c9ef8b664a11c",
+    "1f73dd940a6bfc41f39baea5ad7cbfb4938e8d01",
+    "db07c727fb63c4cf3ffe06754793a7b78687f9ae",
+    "03ef3b1c644e6c04a954d2a2c765d942c8ef81f2",
+    "65a3308d66293f575deb0d34c4abfab11aef904a",
+    "660a235ef2ff90769846eb7fe99fe854f132cc7b",
+    "4dae32a8ab9d6750f1768a78bec3b279d5850100",
+    "248e9cafe1799179403358f6ebc2f9988f6d82e7",
+    "40042c74de23f20a929649cce38f8abc9f069b50",
+    
+    # Lookbook Prigionieri
+    "fb72a4ffd32ad468c22c65ed131d62c2547d4106",
+    "726852eda92e8f69eafeec51caa5b5a9dd8d02e3",
+    "bf89950957a1549f540206338688b8953d96defa",
+    "e698f94714f6cb88e452c9d46336d0a0c64ff282",
+    "8ac6fff55297cc66082fd3d57c961f868fe810fb",
+    "aa42da660bad9b695d23d4b6441bbd44be1ce48c",
+    "85fe137110ca28cbccfd8bdb0da50292f7ef13cb",
+    "8a792c56c3b5680bcfd924067cb98f2fc3e10e46",
+    "223e95ff32190ecc84a253b87efae5089d57545e",
+    "0725ae9e28025979b9c83c2b1886f492e2858994",
+    "2324d3b752ec65bc4aee210f980b5861c901968f",
+    "7e7aa8e4078e091d3bf68073f03efef7ce9f11f4",
+    "0a66af93681dcb0045c6851c7cfb3c5af5f86379",
+    "7c6dfbaee291ee284b755a39666475a8f5eee6bc",
+    "80d710de0c769c57bda09fa4042cfe35dfbb20b1",
+    "708d5dce66f5dcc676ed983d954f38f5b95afe5b",
+    "02dc1c2f756a60cdc6477ac890a405cc1ef402da",
+    "2df32c9774b82194b53fc705f9c6d4829b5ca0e0",
+    
+    # Gladio Lookbook
+    "d30bd798930c8661f28a37c80e6de829a3bda9e6",
+    "22fc33b65f83a50726f8b012c985f87143596f3d",
+    "fd09b44a51e1bace8f760584aabf1e286a4363f4",
+    "18d0a9bcdd5fa0562e179bd723972c0376f829a7",
+    "903a90f7612deed85df8e5b88de0409faaa0f064",
+    "f2be377a6e0775607a7efb78a51c689fd349546c",
+    "34c6a284abdbed2330a29648f5c4664ab88546b2",
+    "e3d58225740db3f188a5d48af2ddd8c118ed513f",
+    "2dd2b8508142ff7e53ad2dfda83f02bc9594ccce",
+    "091ef3a0ff65609876ddb92fc9932866cbccd3f2",
+    "ba4f79a0108791fefd21ec62c8b2a2bad8e2825b",
+    "a3ceaaf83c60b0e8597f27a58d38af5471860418",
+    "e3cb4e47f7fc948810edebe4e42a8578489a0d79",
+    "711fc12c3189a2d90da2c1cf0fbfbc917ba227f0",
+    "04079bed68683ac8ea7b00772ae0ec142047c0fd",
+    
+    # Akira Project
+    "0a11200e98d6e5b219b006bf1e3e398bb3688a7e",
+    "e93509f3c9c80a19067382f176094e7447824235",
+    "d5d51661c2b1b71a09720c90e601e1a1067c173b",
+    "46ba3d2657ad104c15e23cff6bba1eefe7027b39",
+    "c8b86b3fb0bf0091e1696e8fb50bc13f877c03df",
+    "7a229bc8bf0221c527a904213703a3c924154140",
+    "218e1290bc6f40e01b937549d9453ab7e47084b6",
+    "73bfc2c80dfd66052d5c7cbfad68a9e4dada8314",
+    "672df381cabdb8014754438c02c7657797c99db3",
+    
+    # Tabula Rasa
+    "41c8c19399749983bd08fe880502655f938816a7",
+    "653ced26d03657f5540d83c70d63d2bdae8db51e",
+    "e6573b0d87a01cf1bb6a35fd190e6fc862fc7781",
+    "5e2175e7b4d3e8564beaa55cb21a73c9f62b3ba2",
+    "600bd13fa4318d315e14ae2f5fc29b1f2e5f71fe",
+    "046b650602c286bb94dbb62991852cc04a124751",
+    "b49cf72e74da069ebed394558c6fcb7b64bdc944",
+    "85e1ffc87b6d749554d346e2d45fe40f72a9c70c",
+    "2d244e5b302b9c523b2e948e6ab2d8a48e777891",
+    "e700cd453546c507261cdb7afecab790184b89d3",
+    "f8320ff2eba039f25910077471337b382289e8fd",
+    
+    # Utility/Altre
+    "951926a790c20808802c6d84427be07c922bfc94",
+    "efff54ad5f23215365b94ee6e8466ac84a55950a",
+    "d2574065653e3a5ea32f258c498e9ae79ba8135c",
+    "075e7d524d806d92dac5f807bdcd66cad7a25095",
+    "b14eef33786a19c94d96b0fab3ce8707485cbb3b",
+    "32e569d791887e47dbed9712497d25ba34501001",
+    "90a431516799abb410c047047d6d097961108ee2",
+    "c57f890a0a7cbbfac1022bd175abeef0a398629c",
+    "a5d9c621a90a9c9868dbfbe3c02bcb00381321b0",
+    "760f43f470f8790c70d8bcb386cb0c7ab99a2565",
+    "d54b3bb85ae394a41c34f90b77c7f03db2f6f8b6",
+    "1a2733ed89bc89213bfb3deac48132882f15b04b",
+    "3dd8667cf5d7832244c78cabf0d7b9f1703260c1",
+]
+
+# Directory da cercare
+SEARCH_DIRS = [
+    "public",
+    "public/images",
+    "public/images/projects",
+    "public/assets",
+    "assets",
+    "src/assets",
+    "images",
+    "imports",
+]
+
+print(f"🔍 Cerco {len(PNG_HASHES)} file PNG in:")
+for dir in SEARCH_DIRS:
+    if os.path.exists(dir):
+        print(f"   ✓ {dir}/")
+    else:
+        print(f"   ✗ {dir}/ (non esiste)")
+
+print()
+
+# Cerca tutti i file PNG nel progetto
+found_files = []
+deleted_count = 0
+total_size_deleted = 0
+
+for hash in PNG_HASHES:
+    filename = f"{hash}.png"
+    
+    # Cerca in tutte le directory
+    for search_dir in SEARCH_DIRS:
+        if not os.path.exists(search_dir):
+            continue
+            
+        # Cerca ricorsivamente
+        pattern = f"{search_dir}/**/{filename}"
+        matches = glob.glob(pattern, recursive=True)
+        
+        for filepath in matches:
+            if os.path.isfile(filepath):
+                found_files.append(filepath)
+                file_size = os.path.getsize(filepath)
+                total_size_deleted += file_size
+                
+                print(f"🗑️  Elimino: {filepath}")
+                print(f"   Dimensione: {file_size / 1024 / 1024:.2f} MB")
+                
+                # Elimina il file
+                os.remove(filepath)
+                deleted_count += 1
+
+print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+
+if deleted_count > 0:
+    print(f"✅ ELIMINATI {deleted_count} FILE PNG")
+    print(f"💾 Spazio liberato: {total_size_deleted / 1024 / 1024:.2f} MB")
+else:
+    print("✅ NESSUN FILE PNG TROVATO NEL PROGETTO")
+    print("   Le immagini sono già caricate solo da GitHub!")
+
+print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
+
+# Cerca anche file PNG generici (non negli hash)
+print("🔍 Cerco altri file PNG non previsti...")
+all_png = []
+for search_dir in SEARCH_DIRS:
+    if not os.path.exists(search_dir):
+        continue
+    pattern = f"{search_dir}/**/*.png"
+    all_png.extend(glob.glob(pattern, recursive=True))
+
+# Filtra solo quelli che non sono negli hash conosciuti
+other_png = [f for f in all_png if not any(h in f for h in PNG_HASHES)]
+
+if other_png:
+    print(f"\n⚠️  Trovati {len(other_png)} file PNG aggiuntivi:")
+    for f in other_png[:10]:  # Mostra solo i primi 10
+        size = os.path.getsize(f) / 1024
+        print(f"   - {f} ({size:.1f} KB)")
+    if len(other_png) > 10:
+        print(f"   ... e altri {len(other_png) - 10} file")
+    print("\n💡 Questi file potrebbero essere:")
+    print("   - Favicon/Logo (mantienili)")
+    print("   - Immagini di test (puoi eliminarli)")
+else:
+    print("✅ Nessun altro file PNG trovato\n")
+
+print("╔═══════════════════════════════════════════════════════════╗")
+print("║                                                           ║")
+print("║   ✅ CLEANUP COMPLETATO!                                 ║")
+print("║                                                           ║")
+print("╚═══════════════════════════════════════════════════════════╝")
+
+print("\n🚀 PROSSIMI PASSI:")
+print("   1. python3 scripts/fix-project-detail.py")
+print("   2. npm run build")
+print("   3. git add . && git commit && git push\n")
