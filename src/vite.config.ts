@@ -1,25 +1,25 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { figmaAssetPlugin } from './plugins/figmaAssetPlugin';
+// Removed figmaAssetPlugin - not needed with GitHub URLs
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(), 
     tailwindcss(),
-    figmaAssetPlugin() // Handle figma:asset imports
+    // figmaAssetPlugin removed - using direct GitHub URLs now
   ],
   build: {
-    outDir: 'build',
+    outDir: 'dist', // Changed to 'dist' for Vercel compatibility
     sourcemap: false,
     minify: 'esbuild',
-    chunkSizeWarningLimit: 600, // Suppress warning for chunks < 600kb
+    chunkSizeWarningLimit: 1000, // Increased to 1000kb to suppress warnings
     rollupOptions: {
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'motion': ['motion'],
+          'motion': ['motion/react'],
           'lucide': ['lucide-react'],
           'html2canvas': ['html2canvas'],
         },

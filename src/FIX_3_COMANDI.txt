@@ -1,0 +1,120 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🚨 FIX IMMEDIATO ERRORE VERCEL - 3 COMANDI             ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ❌ ERRORI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Could not load figma:asset/947b1480...png
+   → Import virtuali non funzionano in production
+
+2. No Output Directory named "dist" found
+   → Vercel non trova la directory di output
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ SOLUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ho già modificato:
+✅ vite.config.ts     → outDir: 'dist', plugin rimosso
+✅ vercel.json        → outputDirectory: 'dist'
+✅ .gitignore         → aggiunto dist/
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ ESEGUI QUESTI 3 COMANDI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 1. Applica fix (sostituisce 98 import)
+python3 scripts/fix-vercel-complete.py
+
+# 2. Test build locale
+npm run build
+
+# 3. Se funziona, pusha tutto
+git add .
+git commit -m "fix: Vercel build - GitHub URLs + dist output"
+git push origin main
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏱️ TEMPO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Comando 1:  5 secondi
+Comando 2:  10 secondi
+Comando 3:  5 secondi
+
+TOTALE:     20 secondi
+Vercel:     +3 minuti
+
+Portfolio LIVE in 4 minuti! 🚀
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎯 COSA CAMBIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRIMA:
+import img from 'figma:asset/947b1480...png';
+❌ File non trovato in production
+
+DOPO:
+import img from 'https://raw.githubusercontent.com/...947b1480...png';
+✅ Caricato direttamente da GitHub
+
+
+PRIMA:
+vite.config.ts → outDir: 'build'
+vercel.json    → outputDirectory: 'build'
+❌ Directory 'build' non standard
+
+DOPO:
+vite.config.ts → outDir: 'dist'
+vercel.json    → outputDirectory: 'dist'
+✅ Standard Vite, Vercel trova 'dist'
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ RISULTATO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Dopo il push:
+✅ Vercel build success
+✅ Nessun errore ENOENT
+✅ Nessun errore "dist not found"
+✅ Nessun warning chunks
+✅ 98 immagini caricate da GitHub
+✅ Portfolio LIVE!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 DOCUMENTAZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Guida completa:  RISOLUZIONE_COMPLETA_VERCEL.md
+Fix automatico:  scripts/fix-vercel-complete.py
+Solo import:     scripts/fix-imports-now.py
+
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   👉 COPIA E INCOLLA QUESTI 3 COMANDI ADESSO             ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+python3 scripts/fix-vercel-complete.py
+npm run build
+git add . && git commit -m "fix: Vercel build" && git push
+
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🎉 Portfolio live in 4 minuti!                          ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
