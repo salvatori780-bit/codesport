@@ -1,0 +1,214 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🎯 SOSTITUZIONE TUTTE LE IMMAGINI - GUIDA IMMEDIATA    ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 SITUAZIONE ATTUALE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Trovate 98 immagini figma:asset in ProjectDetail.tsx
+✅ Tutte le immagini sono presenti su GitHub
+✅ Stesso nome file (hash)
+✅ Script automatici pronti
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ ESEGUI QUESTO COMANDO ADESSO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+bash scripts/setup-images-complete.sh
+
+
+OPPURE (se lo script sopra non funziona):
+
+python3 scripts/download-real-images.py
+python3 scripts/update-all-imports.py
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📋 COSA FA LO SCRIPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Connessione GitHub API
+   → Repository: salvatori780-bit/imagesportfoliooo
+   → Path: prog. figma/
+
+2. Download 98 immagini PNG
+   → Destinazione: public/images/projects/
+   → Nome identico ai figma:asset hash
+
+3. Aggiorna import in ProjectDetail.tsx
+   → Da: 'figma:asset/[hash].png'
+   → A:  '/images/projects/[hash].png'
+
+4. Crea backup
+   → components/ProjectDetail.tsx.backup
+
+5. Verifica completa
+   → Conta immagini scaricate
+   → Conta import sostituiti
+   → Mostra report finale
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏱️ TEMPO STIMATO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Download 98 PNG:      1-2 minuti
+Aggiorna import:      5 secondi
+Verifica:             5 secondi
+
+TOTALE:               2-3 minuti ⚡
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ DOPO L'ESECUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 1. Verifica immagini scaricate
+ls public/images/projects/*.png | wc -l
+→ Deve mostrare: 98
+
+# 2. Verifica nessun figma:asset rimanente  
+grep "figma:asset" components/ProjectDetail.tsx
+→ Nessun output = ✅
+
+# 3. Verifica import aggiornati
+grep -c "/images/projects/" components/ProjectDetail.tsx
+→ Deve mostrare: 98
+
+# 4. Test locale
+npm run dev
+→ Apri http://localhost:3000
+→ Controlla che TUTTE le immagini si caricano
+
+# 5. Build test
+npm run build
+→ Deve completare senza errori
+
+# 6. Commit & Push
+git add public/images/projects/
+git add components/ProjectDetail.tsx
+git commit -m "feat: Replace all figma:asset with real images from GitHub"
+git push origin main
+
+# 7. Vercel auto-deploya! ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📦 STRUTTURA FILE DOPO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+public/images/projects/
+├── 947b1480fd2c27cbe944c20974d59f6ee50e2436.png ✅
+├── 67c1d5df6152c1f7687ce984fd60aba6d269b04a.png ✅
+├── be62aec909ecd9c2a33f69d2435b5c78fb5287e3.png ✅
+└── ... (altre 95 PNG) ✅
+
+components/ProjectDetail.tsx
+→ Tutti gli import aggiornati ✅
+→ Backup in ProjectDetail.tsx.backup ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎯 TRASFORMAZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRIMA (98 import):
+import img from 'figma:asset/947b1480...png';
+import img from 'figma:asset/67c1d5df...png';
+...
+
+DOPO (98 import):
+import img from '/images/projects/947b1480...png';
+import img from '/images/projects/67c1d5df...png';
+...
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🛠️ TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ "Python not found"
+→ brew install python3  (Mac)
+→ sudo apt install python3  (Linux)
+
+❌ "GitHub API rate limit"
+→ Aspetta 10 minuti
+→ Oppure scarica manualmente:
+  https://github.com/salvatori780-bit/imagesportfoliooo/tree/main/prog.%20figma
+
+❌ "Script not executable"
+→ chmod +x scripts/*.sh
+→ bash scripts/setup-images-complete.sh
+
+❌ "Build ancora fallisce"
+→ Verifica: git status
+→ Assicurati public/images/projects/ sia committato
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 FILE DISPONIBILI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Script esecuzione:
+  /scripts/setup-images-complete.sh      ← Script completo
+  /scripts/download-real-images.py       ← Solo download
+  /scripts/update-all-imports.py         ← Solo update
+  /ESEGUI_IMMEDIATA MENTE.sh            ← Con guida
+
+Documentazione:
+  /ISTRUZIONI_IMMEDIATE.txt              ← Questo file
+  /SOLUZIONE_VERCEL_ERROR.txt            ← Spiega errore
+  /README_SETUP_IMAGES.md                ← Guida completa
+  /ISTRUZIONI_FINALI.md                  ← Tutorial completo
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🚀 COMANDI RAPIDI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Setup completo
+bash scripts/setup-images-complete.sh
+
+# Verifica
+ls public/images/projects/*.png | wc -l
+grep "figma:asset" components/ProjectDetail.tsx
+
+# Test
+npm run dev
+npm run build
+
+# Deploy
+git add public/images/projects/ components/ProjectDetail.tsx
+git commit -m "feat: Replace all images"
+git push
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ CHECKLIST VELOCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Esegui: bash scripts/setup-images-complete.sh
+□ Verifica: 98 PNG in public/images/projects/
+□ Verifica: Nessun figma:asset in ProjectDetail.tsx
+□ Verifica: 98 import /images/projects/ in ProjectDetail.tsx
+□ Test: npm run dev → tutte le immagini visibili
+□ Build: npm run build → successo
+□ Commit: git add + commit + push
+□ Deploy: Vercel completa ✅
+
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   👉 ESEGUI QUESTO COMANDO ADESSO:                        ║
+║                                                           ║
+║   bash scripts/setup-images-complete.sh                  ║
+║                                                           ║
+║   Tempo: 2-3 minuti                                      ║
+║   Risultato: Portfolio con 98 immagini reali! 🎨         ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝

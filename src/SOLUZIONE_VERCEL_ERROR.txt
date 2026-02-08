@@ -1,0 +1,142 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   ⚠️  SOLUZIONE ERRORE VERCEL BUILD                       ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ❌ ERRORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Could not load /vercel/path0/src/assets/947b1480....png
+ENOENT: no such file or directory
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 CAUSA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Gli import figma:asset sono placeholder virtuali che funzionano 
+solo in Figma Make, NON in production.
+
+Le immagini non sono fisicamente nel repository Git, quindi 
+Vercel non può trovarle durante il build.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ SOLUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Scaricare le 98 PNG da GitHub
+2. Salvarle in public/images/projects/
+3. Aggiornare gli import da figma:asset a /images/projects/
+4. Committare e pushare
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ ESEGUI QUESTO COMANDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+bash scripts/setup-images-complete.sh
+
+
+Questo comando:
+✅ Scarica tutte le 98 immagini da GitHub
+✅ Le salva in public/images/projects/
+✅ Sostituisce tutti gli import automaticamente
+✅ Crea backup di sicurezza
+✅ Verifica che tutto sia OK
+
+Tempo: 2-3 minuti
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📋 DOPO IL COMANDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Testa locale:
+   npm run dev
+   
+   Apri http://localhost:3000
+   Verifica che tutte le immagini si caricano
+
+2. Verifica build:
+   npm run build
+   
+   Deve completare senza errori
+
+3. Commit e push:
+   git add public/images/projects/
+   git add components/ProjectDetail.tsx
+   git commit -m "feat: Add real images from GitHub"
+   git push origin main
+
+4. Vercel auto-deploya! ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 VERIFICA SUCCESSO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Immagini scaricate?
+ls public/images/projects/*.png | wc -l
+# Output: 98 ✅
+
+# Import aggiornati?
+grep "figma:asset" components/ProjectDetail.tsx
+# Nessun output = ✅
+
+# Build OK?
+npm run build
+# ✓ built in 15s ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 DOCUMENTAZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ESEGUI_ORA.txt           → Quick start
+README_SETUP_IMAGES.md   → Guida completa
+SETUP_COMPLETO.md        → Documentazione tecnica
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🛠️ PROBLEMI?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Python not found":
+→ brew install python3         # Mac
+→ sudo apt install python3     # Linux
+
+"GitHub API rate limit":
+→ Aspetta 10 minuti
+→ Oppure scarica manuale da:
+  https://github.com/salvatori780-bit/imagesportfoliooo
+
+"Build ancora fallisce":
+→ Verifica: git status
+→ Assicurati che public/images/projects/ sia committato
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏱️ TIMELINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ora          → bash scripts/setup-images-complete.sh
++2 min       → Download + Update completato ✅
++3 min       → npm run dev (test OK) ✅
++4 min       → npm run build (OK) ✅
++5 min       → git push ✅
++7 min       → Vercel deploy completato ✅
+
+Portfolio LIVE con immagini reali! 🎉
+
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   👉 COPIA & ESEGUI:                                      ║
+║                                                           ║
+║   bash scripts/setup-images-complete.sh                  ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝

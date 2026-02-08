@@ -1,0 +1,176 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   ⚡ SOLUZIONE DEFINITIVA - ESEGUI ORA                    ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+Il build Vercel fallisce perché le immagini non sono nel repository.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎯 SOLUZIONE IN 1 COMANDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+bash scripts/setup-images-complete.sh
+
+
+Questo comando:
+1. ✅ Scarica tutte le 98 PNG da GitHub
+2. ✅ Le salva in public/images/projects/
+3. ✅ Sostituisce figma:asset → /images/projects/
+4. ✅ Crea backup automatico
+5. ✅ Verifica tutto
+
+Tempo: ~2-3 minuti
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📋 ALTERNATIVA: STEP BY STEP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se preferisci eseguire manualmente:
+
+# 1. Scarica immagini
+python3 scripts/download-real-images.py
+
+# 2. Aggiorna import
+python3 scripts/update-all-imports.py
+
+# 3. Verifica
+ls public/images/projects/*.png | wc -l
+grep "figma:asset" components/ProjectDetail.tsx
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🧪 DOPO IL SETUP - TESTA LOCALE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+npm run dev
+
+Apri: http://localhost:3000
+
+Controlla che:
+✅ Tutte le immagini si caricano
+✅ Nessun placeholder grigio
+✅ Nessun errore console
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🏗️ VERIFICA BUILD PRODUCTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+npm run build
+npm run preview
+
+Se il build completa senza errori ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📦 COMMIT & DEPLOY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+git add public/images/projects/
+git add components/ProjectDetail.tsx
+git commit -m "feat: Add real images from GitHub
+
+- Downloaded 98 PNG images from GitHub repository
+- Updated all import statements from figma:asset to /images/projects/
+- Fixed Vercel build error"
+
+git push origin main
+
+Vercel rileverà il push e builderà automaticamente! 🚀
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 VERIFICA SUCCESSO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Dopo il setup, verifica:
+
+# Immagini scaricate
+ls public/images/projects/*.png | wc -l
+# Output: ~98
+
+# Nessun figma:asset
+grep "figma:asset" components/ProjectDetail.tsx
+# Nessun output = ✅
+
+# Import aggiornati
+grep -c "/images/projects/" components/ProjectDetail.tsx
+# Output: ~98
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🛠️ TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ "Python non trovato":
+   brew install python3         # Mac
+   sudo apt install python3     # Linux
+   
+   OPPURE scarica manualmente:
+   https://github.com/salvatori780-bit/imagesportfoliooo/tree/main/prog.%20figma
+
+❌ "Script non eseguibile":
+   chmod +x scripts/setup-images-complete.sh
+
+❌ "GitHub API rate limit":
+   Aspetta 10 minuti o scarica manualmente
+
+❌ Build ancora fallisce:
+   Verifica che public/images/projects/ sia nel commit
+   git status
+   git add public/images/projects/
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 FILE CREATI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/scripts/download-real-images.py     ← Scarica PNG da GitHub
+/scripts/update-all-imports.py       ← Sostituisce import
+/scripts/setup-images-complete.sh    ← Script master (tutto in 1)
+
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   👉 COPIA & INCOLLA QUESTO:                              ║
+║                                                           ║
+║   bash scripts/setup-images-complete.sh                  ║
+║                                                           ║
+║   Poi testa con: npm run dev                             ║
+║                                                           ║
+║   Se OK: npm run build && git add . && git push          ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏱️ TEMPO STIMATO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Download immagini:     ~1-2 minuti
+Aggiorna import:       ~5 secondi
+Test locale:           ~30 secondi
+Build verification:    ~30 secondi
+Commit & push:         ~1 minuto
+Vercel deploy:         ~2-3 minuti
+
+TOTALE:                ~5-7 minuti ⚡
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎯 COSA SUCCEDE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRIMA (ATTUALE):
+❌ import from 'figma:asset/[hash].png'
+❌ Nessun file in public/images/projects/
+❌ Vercel build fallisce
+
+DOPO (TRA 5 MINUTI):
+✅ import from '/images/projects/[hash].png'
+✅ 98 PNG reali in public/images/projects/
+✅ Vercel build successo
+✅ Portfolio con immagini reali! 🎨

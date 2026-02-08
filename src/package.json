@@ -26,7 +26,11 @@
     "update-imports": "node scripts/update-image-imports.js",
     "setup-images": "npm run download-images && npm run update-imports",
     "setup-images-bash": "bash scripts/setup-github-images.sh",
-    "replace-imports": "bash scripts/replace-imports.sh"
+    "replace-imports": "bash scripts/replace-imports.sh",
+    "download-real-images": "python3 scripts/download-real-images.py",
+    "update-all-imports": "python3 scripts/update-all-imports.py",
+    "setup-complete": "bash scripts/setup-images-complete.sh",
+    "quick-start": "bash QUICK_START.sh"
   },
   "dependencies": {
     "react": "^18.3.1",

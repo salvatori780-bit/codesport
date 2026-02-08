@@ -1,0 +1,257 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🚀 PORTFOLIO FRANCESCO SALVATORI                       ║
+║      Setup Immagini GitHub                               ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚠️  SITUAZIONE ATTUALE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Vercel build fallisce con errore:
+"Could not load .../947b1480....png: ENOENT"
+
+Le immagini non sono nel repository Git.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ SOLUZIONE PRONTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ho creato script automatici per:
+1. Scaricare 98 PNG da GitHub
+2. Aggiornare import in ProjectDetail.tsx
+3. Committare e deployare
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 LEGGI QUESTI FILE NELL'ORDINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. 📄 SOLUZIONE_VERCEL_ERROR.txt
+   → Spiegazione problema e soluzione rapida (2 min lettura)
+   
+2. 📄 ESEGUI_ORA.txt
+   → Comandi immediati da copiare/incollare (1 min lettura)
+   
+3. 📄 ISTRUZIONI_FINALI.md
+   → Guida step-by-step completa (5 min lettura)
+   
+4. 📄 README_SETUP_IMAGES.md
+   → Documentazione tecnica dettagliata (10 min lettura)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ ESECUZIONE IMMEDIATA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se vuoi eseguire subito senza leggere:
+
+bash scripts/setup-images-complete.sh
+
+Questo comando fa TUTTO automaticamente.
+Tempo: 2-3 minuti
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎯 OPZIONI DISPONIBILI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPZIONE A - Automatico completo:
+  bash scripts/setup-images-complete.sh
+  
+OPZIONE B - Con npm:
+  npm run setup-complete
+  
+OPZIONE C - Guida interattiva:
+  bash QUICK_START.sh
+  
+OPZIONE D - Step by step:
+  python3 scripts/download-real-images.py
+  python3 scripts/update-all-imports.py
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📦 SCRIPT CREATI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/scripts/
+├── download-real-images.py          ← Scarica PNG da GitHub
+├── update-all-imports.py            ← Aggiorna import
+├── setup-images-complete.sh         ← SCRIPT MASTER ⭐
+├── setup-github-images.sh           ← Alternativa bash
+├── replace-imports.sh               ← Replace veloce
+└── make-executable.sh               ← Rendi eseguibili
+
+/
+├── INIZIA_QUI.txt                   ← Questo file
+├── SOLUZIONE_VERCEL_ERROR.txt       ← Spiega problema
+├── ESEGUI_ORA.txt                   ← Quick start
+├── ISTRUZIONI_FINALI.md             ← Guida completa
+├── README_SETUP_IMAGES.md           ← Documentazione
+├── SETUP_COMPLETO.md                ← Info tecniche
+└── QUICK_START.sh                   ← Guida interattiva
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎯 COSA SUCCEDE DOPO L'ESECUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✅ 98 PNG scaricate in public/images/projects/
+2. ✅ Import aggiornati in ProjectDetail.tsx
+3. ✅ Backup creato automaticamente
+4. ✅ Verifica completa con report
+
+Poi:
+5. 🧪 npm run dev → Test locale
+6. 🏗️ npm run build → Verifica build
+7. 📦 git add + commit + push → Deploy
+8. 🚀 Vercel auto-deploya!
+
+RISULTATO: Portfolio live con 98 immagini reali! 🎨
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏱️ TEMPO TOTALE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Setup:          2-3 minuti
+Test:           1 minuto
+Build:          30 secondi
+Commit/Push:    1 minuto
+Vercel deploy:  2-3 minuti
+
+TOTALE:         6-8 minuti dalla prima esecuzione al sito live!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🛠️ PREREQUISITI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Python 3 installato
+   → brew install python3  (Mac)
+   → sudo apt install python3  (Linux)
+   
+✅ Git configurato
+   
+✅ Repository clonato localmente
+
+Se non hai Python:
+→ Scarica manualmente PNG da GitHub
+→ Dettagli in: SOLUZIONE_VERCEL_ERROR.txt
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📞 COMANDI RAPIDI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Setup completo
+bash scripts/setup-images-complete.sh
+
+# Test
+npm run dev
+
+# Build
+npm run build
+
+# Deploy
+git add public/images/projects/ components/ProjectDetail.tsx
+git commit -m "feat: Add real images from GitHub"
+git push origin main
+
+# Verifica immagini
+ls public/images/projects/*.png | wc -l
+
+# Verifica import
+grep "figma:asset" components/ProjectDetail.tsx
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💡 CONSIGLIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se è la prima volta:
+1. Leggi SOLUZIONE_VERCEL_ERROR.txt (2 min)
+2. Leggi ESEGUI_ORA.txt (1 min)
+3. Esegui: bash scripts/setup-images-complete.sh
+4. Segui le istruzioni mostrate a schermo
+
+Se hai fretta:
+1. Esegui: bash scripts/setup-images-complete.sh
+2. Aspetta completamento
+3. Testa: npm run dev
+4. Deploy: npm run build && git add . && git push
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🆘 PROBLEMI?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Consulta il troubleshooting in:
+→ README_SETUP_IMAGES.md (sezione 🛠️ Troubleshooting)
+→ ISTRUZIONI_FINALI.md (sezione Troubleshooting)
+
+Errori comuni:
+❌ Python not found → Installa Python 3
+❌ GitHub API limit → Aspetta 10 min o download manuale
+❌ Script non eseguibile → chmod +x scripts/*.sh
+
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   👉 INIZIA ADESSO:                                       ║
+║                                                           ║
+║   1. Leggi: SOLUZIONE_VERCEL_ERROR.txt                   ║
+║   2. Esegui: bash scripts/setup-images-complete.sh       ║
+║   3. Testa: npm run dev                                  ║
+║   4. Deploy: npm run build && git push                   ║
+║                                                           ║
+║   Tempo totale: 6-8 minuti ⚡                             ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📋 CHECKLIST VELOCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Esegui setup:
+  bash scripts/setup-images-complete.sh
+  
+□ Verifica immagini:
+  ls public/images/projects/*.png | wc -l
+  → Deve mostrare: 98
+  
+□ Verifica import:
+  grep "figma:asset" components/ProjectDetail.tsx
+  → Nessun output = ✅
+  
+□ Test locale:
+  npm run dev
+  → Immagini visibili = ✅
+  
+□ Build:
+  npm run build
+  → Success = ✅
+  
+□ Deploy:
+  git add . && git commit && git push
+  → Vercel deploya = ✅
+
+Portfolio LIVE! 🎉
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎯 TL;DR (Too Long; Didn't Read)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+bash scripts/setup-images-complete.sh && npm run dev
+
+Fatto! ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Buon lavoro! 🚀✨
