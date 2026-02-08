@@ -1,133 +1,120 @@
-import image_947b1480fd2c27cbe944c20974d59f6ee50e2436 from 'figma:asset/947b1480fd2c27cbe944c20974d59f6ee50e2436.png';
-import image_67c1d5df6152c1f7687ce984fd60aba6d269b04a from 'figma:asset/67c1d5df6152c1f7687ce984fd60aba6d269b04a.png';
-import image_be62aec909ecd9c2a33f69d2435b5c78fb5287e3 from 'figma:asset/be62aec909ecd9c2a33f69d2435b5c78fb5287e3.png';
-import image_2565569d5045bbdc037d9657cff9d89005de78e5 from 'figma:asset/2565569d5045bbdc037d9657cff9d89005de78e5.png';
-import image_dc534b792b0d338dc7bc2b27065eb9f471334dc2 from 'figma:asset/dc534b792b0d338dc7bc2b27065eb9f471334dc2.png';
-import image_951926a790c20808802c6d84427be07c922bfc94 from 'figma:asset/951926a790c20808802c6d84427be07c922bfc94.png';
-import image_efff54ad5f23215365b94ee6e8466ac84a55950a from 'figma:asset/efff54ad5f23215365b94ee6e8466ac84a55950a.png';
-import image_d2574065653e3a5ea32f258c498e9ae79ba8135c from 'figma:asset/d2574065653e3a5ea32f258c498e9ae79ba8135c.png';
-import image_075e7d524d806d92dac5f807bdcd66cad7a25095 from 'figma:asset/075e7d524d806d92dac5f807bdcd66cad7a25095.png';
-import image_b14eef33786a19c94d96b0fab3ce8707485cbb3b from 'figma:asset/b14eef33786a19c94d96b0fab3ce8707485cbb3b.png';
-import image_32e569d791887e47dbed9712497d25ba34501001 from 'figma:asset/32e569d791887e47dbed9712497d25ba34501001.png';
-import image_90a431516799abb410c047047d6d097961108ee2 from 'figma:asset/90a431516799abb410c047047d6d097961108ee2.png';
-import image_c57f890a0a7cbbfac1022bd175abeef0a398629c from 'figma:asset/c57f890a0a7cbbfac1022bd175abeef0a398629c.png';
-import image_a5d9c621a90a9c9868dbfbe3c02bcb00381321b0 from 'figma:asset/a5d9c621a90a9c9868dbfbe3c02bcb00381321b0.png';
-import image_760f43f470f8790c70d8bcb386cb0c7ab99a2565 from 'figma:asset/760f43f470f8790c70d8bcb386cb0c7ab99a2565.png';
-import image_d54b3bb85ae394a41c34f90b77c7f03db2f6f8b6 from 'figma:asset/d54b3bb85ae394a41c34f90b77c7f03db2f6f8b6.png';
-import image_8edff57b16beb14c2ea6421668fa71a244bf9d9c from 'figma:asset/8edff57b16beb14c2ea6421668fa71a244bf9d9c.png';
-import image_03ab7bda2b8830582eaf387f56a7000a6a8e87d6 from 'figma:asset/03ab7bda2b8830582eaf387f56a7000a6a8e87d6.png';
-import image_78cc8121f7f0bfabae7d7e27f086445050a13024 from 'figma:asset/78cc8121f7f0bfabae7d7e27f086445050a13024.png';
-import image_73bfc2c80dfd66052d5c7cbfad68a9e4dada8314 from 'figma:asset/73bfc2c80dfd66052d5c7cbfad68a9e4dada8314.png';
-import image_218e1290bc6f40e01b937549d9453ab7e47084b6 from 'figma:asset/218e1290bc6f40e01b937549d9453ab7e47084b6.png';
-import image_7a229bc8bf0221c527a904213703a3c924154140 from 'figma:asset/7a229bc8bf0221c527a904213703a3c924154140.png';
-import image_c8b86b3fb0bf0091e1696e8fb50bc13f877c03df from 'figma:asset/c8b86b3fb0bf0091e1696e8fb50bc13f877c03df.png';
-import image_46ba3d2657ad104c15e23cff6bba1eefe7027b39 from 'figma:asset/46ba3d2657ad104c15e23cff6bba1eefe7027b39.png';
-import image_d5d51661c2b1b71a09720c90e601e1a1067c173b from 'figma:asset/d5d51661c2b1b71a09720c90e601e1a1067c173b.png';
-import image_e93509f3c9c80a19067382f176094e7447824235 from 'figma:asset/e93509f3c9c80a19067382f176094e7447824235.png';
-import image_0a11200e98d6e5b219b006bf1e3e398bb3688a7e from 'figma:asset/0a11200e98d6e5b219b006bf1e3e398bb3688a7e.png';
-import image_672df381cabdb8014754438c02c7657797c99db3 from 'figma:asset/672df381cabdb8014754438c02c7657797c99db3.png';
-import image_600bd13fa4318d315e14ae2f5fc29b1f2e5f71fe from 'figma:asset/600bd13fa4318d315e14ae2f5fc29b1f2e5f71fe.png';
-import image_046b650602c286bb94dbb62991852cc04a124751 from 'figma:asset/046b650602c286bb94dbb62991852cc04a124751.png';
-import image_5e2175e7b4d3e8564beaa55cb21a73c9f62b3ba2 from 'figma:asset/5e2175e7b4d3e8564beaa55cb21a73c9f62b3ba2.png';
-import image_e6573b0d87a01cf1bb6a35fd190e6fc862fc7781 from 'figma:asset/e6573b0d87a01cf1bb6a35fd190e6fc862fc7781.png';
-import image_653ced26d03657f5540d83c70d63d2bdae8db51e from 'figma:asset/653ced26d03657f5540d83c70d63d2bdae8db51e.png';
-import image_41c8c19399749983bd08fe880502655f938816a7 from 'figma:asset/41c8c19399749983bd08fe880502655f938816a7.png';
-import image_85e1ffc87b6d749554d346e2d45fe40f72a9c70c from 'figma:asset/85e1ffc87b6d749554d346e2d45fe40f72a9c70c.png';
-import image_3dd8667cf5d7832244c78cabf0d7b9f1703260c1 from 'figma:asset/3dd8667cf5d7832244c78cabf0d7b9f1703260c1.png';
-import image_2d244e5b302b9c523b2e948e6ab2d8a48e777891 from 'figma:asset/2d244e5b302b9c523b2e948e6ab2d8a48e777891.png';
-import image_b49cf72e74da069ebed394558c6fcb7b64bdc944 from 'figma:asset/b49cf72e74da069ebed394558c6fcb7b64bdc944.png';
-import image_e700cd453546c507261cdb7afecab790184b89d3 from 'figma:asset/e700cd453546c507261cdb7afecab790184b89d3.png';
-import image_f8320ff2eba039f25910077471337b382289e8fd from 'figma:asset/f8320ff2eba039f25910077471337b382289e8fd.png';
-import image_1a2733ed89bc89213bfb3deac48132882f15b04b from 'figma:asset/1a2733ed89bc89213bfb3deac48132882f15b04b.png';
-import image_04079bed68683ac8ea7b00772ae0ec142047c0fd from 'figma:asset/04079bed68683ac8ea7b00772ae0ec142047c0fd.png';
-import image_711fc12c3189a2d90da2c1cf0fbfbc917ba227f0 from 'figma:asset/711fc12c3189a2d90da2c1cf0fbfbc917ba227f0.png';
-import image_e3cb4e47f7fc948810edebe4e42a8578489a0d79 from 'figma:asset/e3cb4e47f7fc948810edebe4e42a8578489a0d79.png';
-import image_a3ceaaf83c60b0e8597f27a58d38af5471860418 from 'figma:asset/a3ceaaf83c60b0e8597f27a58d38af5471860418.png';
-import image_ba4f79a0108791fefd21ec62c8b2a2bad8e2825b from 'figma:asset/ba4f79a0108791fefd21ec62c8b2a2bad8e2825b.png';
-import image_091ef3a0ff65609876ddb92fc9932866cbccd3f2 from 'figma:asset/091ef3a0ff65609876ddb92fc9932866cbccd3f2.png';
-import image_2dd2b8508142ff7e53ad2dfda83f02bc9594ccce from 'figma:asset/2dd2b8508142ff7e53ad2dfda83f02bc9594ccce.png';
-import image_e3d58225740db3f188a5d48af2ddd8c118ed513f from 'figma:asset/e3d58225740db3f188a5d48af2ddd8c118ed513f.png';
-import image_34c6a284abdbed2330a29648f5c4664ab88546b2 from 'figma:asset/34c6a284abdbed2330a29648f5c4664ab88546b2.png';
-import image_f2be377a6e0775607a7efb78a51c689fd349546c from 'figma:asset/f2be377a6e0775607a7efb78a51c689fd349546c.png';
-import image_903a90f7612deed85df8e5b88de0409faaa0f064 from 'figma:asset/903a90f7612deed85df8e5b88de0409faaa0f064.png';
-import image_18d0a9bcdd5fa0562e179bd723972c0376f829a7 from 'figma:asset/18d0a9bcdd5fa0562e179bd723972c0376f829a7.png';
-import image_fd09b44a51e1bace8f760584aabf1e286a4363f4 from 'figma:asset/fd09b44a51e1bace8f760584aabf1e286a4363f4.png';
-import image_22fc33b65f83a50726f8b012c985f87143596f3d from 'figma:asset/22fc33b65f83a50726f8b012c985f87143596f3d.png';
-import image_d30bd798930c8661f28a37c80e6de829a3bda9e6 from 'figma:asset/d30bd798930c8661f28a37c80e6de829a3bda9e6.png';
-import fifthImage from 'figma:asset/04d470ea235961b181e9f8e76df4a88df44ddd7f.png';
+// ══════════════════════════════════════════════════════════════════
+// 🖼️ IMMAGINI DA GITHUB - Lazy Loading (ZERO PNG nel bundle!)
+// ══════════════════════════════════════════════════════════════════
+
 import { motion, AnimatePresence } from 'motion/react';
 import { X, BookOpen, ArrowLeft, Upload, FileText, Check, Languages } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { saveImage, getImage, getAllImages } from '../utils/imageStorage';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { projectTranslations } from './projectTranslations';
+import { getMarcelImages, getGraphicsImages, getPrigionieriImages, getGladioImages, getLookbookImages, getImageUrl, imageFiles } from '../utils/projectImages';
 
-// Import images for Marcel project
-const marcelImage1 = fifthImage; // Use the preview image as first image
-const marcelImage2 = image_78cc8121f7f0bfabae7d7e27f086445050a13024;
-const marcelImage3 = image_03ab7bda2b8830582eaf387f56a7000a6a8e87d6;
-const marcelImage4 = 'https://images.unsplash.com/photo-1634671494478-18ae96453241?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwYnJhbmRpbmd8ZW58MXx8fHwxNzY4MjI4NDU3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
-const marcelImage5 = 'https://images.unsplash.com/photo-1614036634955-ae5e90f9b9eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aXN1YWwlMjBpZGVudGl0eSUyMGRlc2lnbnxlbnwxfHx8fDE3NjgyMjg0NTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
-const marcelImage6 = 'https://images.unsplash.com/photo-1752650735608-6895f65de119?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZGl0b3JpYWwlMjBsYXlvdXR8ZW58MXx8fHwxNzY4MTUwODE3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
-const marcelImage7 = 'https://images.unsplash.com/photo-1739476478863-42b2b97eb647?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0eXBvZ3JhcGh5JTIwZGVzaWduJTIwcG9zdGVyfGVufDF8fHx8MTc2ODI0ODI1N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
+// 📦 Carica immagini on-demand da GitHub (NON bundlate da Vite!)
+const marcelImagesArray = getMarcelImages();
+const graphicsImages = getGraphicsImages();
+const prigionieriImagesArray = getPrigionieriImages();
+const gladioImagesArray = getGladioImages();
+const lookbookImagesGladio = getLookbookImages();
 
-// Graphics gallery images for Marcel project (Project 6 - Prigionieri Print Design)
-// Keep only the first original image, replace others with Unsplash replaceable images
-const graphicsImages = [
-  image_8edff57b16beb14c2ea6421668fa71a244bf9d9c, // Original first image
-  image_dc534b792b0d338dc7bc2b27065eb9f471334dc2,
-  image_2565569d5045bbdc037d9657cff9d89005de78e5,
-  image_be62aec909ecd9c2a33f69d2435b5c78fb5287e3,
-  image_67c1d5df6152c1f7687ce984fd60aba6d269b04a,
-  image_947b1480fd2c27cbe944c20974d59f6ee50e2436
-];
+// Variabili di compatibilità per Marcel
+const marcelImage1 = marcelImagesArray[0];
+const marcelImage2 = marcelImagesArray[1];
+const marcelImage3 = marcelImagesArray[2];
+const marcelImage4 = marcelImagesArray[3];
+const marcelImage5 = marcelImagesArray[4];
+const marcelImage6 = marcelImagesArray[5];
+const marcelImage7 = marcelImagesArray[6];
 
-// Import images for Prigionieri project
-import image_267fb24c81eab5a763df6ff9cbfc156ccd47fd16 from 'figma:asset/267fb24c81eab5a763df6ff9cbfc156ccd47fd16.png';
-import image_e0ee7d605cdce8368bd0f37ad1067c87cfb92517 from 'figma:asset/e0ee7d605cdce8368bd0f37ad1067c87cfb92517.png';
-import image_8841b8980b55ae583f91808ba5296810558afc0c from 'figma:asset/8841b8980b55ae583f91808ba5296810558afc0c.png';
-import image_827a7c43d3b9726a8e3b3c34068d16cada00a278 from 'figma:asset/827a7c43d3b9726a8e3b3c34068d16cada00a278.png';
-import image_ae9095b4b79670b547795a27344bfbb1c1371bcb from 'figma:asset/ae9095b4b79670b547795a27344bfbb1c1371bcb.png';
-import image_9f69aef6ba94980ec094ccf85a2f76e1c8f4442f from 'figma:asset/9f69aef6ba94980ec094ccf85a2f76e1c8f4442f.png';
-import image_5c36cb5b169722c6e6fdd053bcda4f80d86e2803 from 'figma:asset/5c36cb5b169722c6e6fdd053bcda4f80d86e2803.png';
-import image_02ac84fbc553c23f410c592569e7a9ab98f01da0 from 'figma:asset/02ac84fbc553c23f410c592569e7a9ab98f01da0.png';
-import image_95164f811ef1fb5598130ada0b917f2e066fefbd from 'figma:asset/95164f811ef1fb5598130ada0b917f2e066fefbd.png';
-import image_a9d6601be4fa3e71b930add370c78cc92e75ab11 from 'figma:asset/a9d6601be4fa3e71b930add370c78cc92e75ab11.png';
+// Variabili per Gladio
+const image_gladio_1 = gladioImagesArray[0];
+const image_gladio_2 = gladioImagesArray[1];
+const image_6 = gladioImagesArray[2];
+const image_5 = gladioImagesArray[3];
+const image_7 = gladioImagesArray[4];
+const image_8 = gladioImagesArray[5];
+const image_9 = gladioImagesArray[6];
+const image_10 = gladioImagesArray[7];
+const image_11 = gladioImagesArray[8];
+const image_12 = gladioImagesArray[9];
+const image_13 = gladioImagesArray[10];
+const image_14 = gladioImagesArray[11];
+const image_15 = gladioImagesArray[12];
 
-// Import images for Gladio project
-import image_gladio_1 from 'figma:asset/e453ea91ddd57dea8dd86b2977ce20d4c7b8815b.png';
-import image_gladio_2 from 'figma:asset/7e2a7a5a23e0b7d01cf8186841caff37e8ca5e35.png';
-import image_6 from 'figma:asset/aa48c2c3eaf9fe81a88fb45dc18fba8b533e50ca.png';
-import image_5 from 'figma:asset/d6d71f9f16754fa9e7af06c42dd3def5e6aaea83.png';
-import image_7 from 'figma:asset/2c49b8d2fdf27f51b6aedc27e52c9ef8b664a11c.png';
-import image_8 from 'figma:asset/1f73dd940a6bfc41f39baea5ad7cbfb4938e8d01.png';
-import image_9 from 'figma:asset/db07c727fb63c4cf3ffe06754793a7b78687f9ae.png';
-import image_10 from 'figma:asset/03ef3b1c644e6c04a954d2a2c765d942c8ef81f2.png';
-import image_11 from 'figma:asset/65a3308d66293f575deb0d34c4abfab11aef904a.png';
-import image_12 from 'figma:asset/660a235ef2ff90769846eb7fe99fe854f132cc7b.png';
-import image_13 from 'figma:asset/4dae32a8ab9d6750f1768a78bec3b279d5850100.png';
-import image_14 from 'figma:asset/248e9cafe1799179403358f6ebc2f9988f6d82e7.png';
-import image_15 from 'figma:asset/40042c74de23f20a929649cce38f8abc9f069b50.png';
+// Variabili per Prigionieri
+const image_267fb24c81eab5a763df6ff9cbfc156ccd47fd16 = prigionieriImagesArray[0];
+const image_e0ee7d605cdce8368bd0f37ad1067c87cfb92517 = prigionieriImagesArray[1];
+const image_8841b8980b55ae583f91808ba5296810558afc0c = prigionieriImagesArray[2];
+const image_827a7c43d3b9726a8e3b3c34068d16cada00a278 = prigionieriImagesArray[3];
+const image_ae9095b4b79670b547795a27344bfbb1c1371bcb = prigionieriImagesArray[4];
+const image_9f69aef6ba94980ec094ccf85a2f76e1c8f4442f = prigionieriImagesArray[5];
+const image_5c36cb5b169722c6e6fdd053bcda4f80d86e2803 = prigionieriImagesArray[6];
+const image_02ac84fbc553c23f410c592569e7a9ab98f01da0 = prigionieriImagesArray[7];
+const image_95164f811ef1fb5598130ada0b917f2e066fefbd = prigionieriImagesArray[8];
+const image_a9d6601be4fa3e71b930add370c78cc92e75ab11 = prigionieriImagesArray[9];
 
-// Import images for Prigionieri lookbook
-import image_fb72a4ffd32ad468c22c65ed131d62c2547d4106 from 'figma:asset/fb72a4ffd32ad468c22c65ed131d62c2547d4106.png';
-import image_726852eda92e8f69eafeec51caa5b5a9dd8d02e3 from 'figma:asset/726852eda92e8f69eafeec51caa5b5a9dd8d02e3.png';
-import image_bf89950957a1549f540206338688b8953d96defa from 'figma:asset/bf89950957a1549f540206338688b8953d96defa.png';
-import image_e698f94714f6cb88e452c9d46336d0a0c64ff282 from 'figma:asset/e698f94714f6cb88e452c9d46336d0a0c64ff282.png';
-import image_8ac6fff55297cc66082fd3d57c961f868fe810fb from 'figma:asset/8ac6fff55297cc66082fd3d57c961f868fe810fb.png';
-import image_aa42da660bad9b695d23d4b6441bbd44be1ce48c from 'figma:asset/aa42da660bad9b695d23d4b6441bbd44be1ce48c.png';
-import image_85fe137110ca28cbccfd8bdb0da50292f7ef13cb from 'figma:asset/85fe137110ca28cbccfd8bdb0da50292f7ef13cb.png';
-import image_8a792c56c3b5680bcfd924067cb98f2fc3e10e46 from 'figma:asset/8a792c56c3b5680bcfd924067cb98f2fc3e10e46.png';
-import image_223e95ff32190ecc84a253b87efae5089d57545e from 'figma:asset/223e95ff32190ecc84a253b87efae5089d57545e.png';
-import image_0725ae9e28025979b9c83c2b1886f492e2858994 from 'figma:asset/0725ae9e28025979b9c83c2b1886f492e2858994.png';
-import image_2324d3b752ec65bc4aee210f980b5861c901968f from 'figma:asset/2324d3b752ec65bc4aee210f980b5861c901968f.png';
-import image_7e7aa8e4078e091d3bf68073f03efef7ce9f11f4 from 'figma:asset/7e7aa8e4078e091d3bf68073f03efef7ce9f11f4.png';
-import image_0a66af93681dcb0045c6851c7cfb3c5af5f86379 from 'figma:asset/0a66af93681dcb0045c6851c7cfb3c5af5f86379.png';
-import image_7c6dfbaee291ee284b755a39666475a8f5eee6bc from 'figma:asset/7c6dfbaee291ee284b755a39666475a8f5eee6bc.png';
-import image_80d710de0c769c57bda09fa4042cfe35dfbb20b1 from 'figma:asset/80d710de0c769c57bda09fa4042cfe35dfbb20b1.png';
-import image_708d5dce66f5dcc676ed983d954f38f5b95afe5b from 'figma:asset/708d5dce66f5dcc676ed983d954f38f5b95afe5b.png';
-import image_02dc1c2f756a60cdc6477ac890a405cc1ef402da from 'figma:asset/02dc1c2f756a60cdc6477ac890a405cc1ef402da.png';
-import image_2df32c9774b82194b53fc705f9c6d4829b5ca0e0 from 'figma:asset/2df32c9774b82194b53fc705f9c6d4829b5ca0e0.png';
+// Variabili per Lookbook
+const image_fb72a4ffd32ad468c22c65ed131d62c2547d4106 = lookbookImagesGladio[0];
+const image_726852eda92e8f69eafeec51caa5b5a9dd8d02e3 = lookbookImagesGladio[1];
+const image_bf89950957a1549f540206338688b8953d96defa = lookbookImagesGladio[2];
+const image_e698f94714f6cb88e452c9d46336d0a0c64ff282 = lookbookImagesGladio[3];
+const image_8ac6fff55297cc66082fd3d57c961f868fe810fb = lookbookImagesGladio[4];
+const image_aa42da660bad9b695d23d4b6441bbd44be1ce48c = lookbookImagesGladio[5];
+const image_85fe137110ca28cbccfd8bdb0da50292f7ef13cb = lookbookImagesGladio[6];
+const image_8a792c56c3b5680bcfd924067cb98f2fc3e10e46 = lookbookImagesGladio[7];
+const image_223e95ff32190ecc84a253b87efae5089d57545e = lookbookImagesGladio[8];
+const image_0725ae9e28025979b9c83c2b1886f492e2858994 = lookbookImagesGladio[9];
+const image_2324d3b752ec65bc4aee210f980b5861c901968f = lookbookImagesGladio[10];
+const image_7e7aa8e4078e091d3bf68073f03efef7ce9f11f4 = lookbookImagesGladio[11];
+const image_0a66af93681dcb0045c6851c7cfb3c5af5f86379 = lookbookImagesGladio[12];
+const image_7c6dfbaee291ee284b755a39666475a8f5eee6bc = lookbookImagesGladio[13];
+const image_80d710de0c769c57bda09fa4042cfe35dfbb20b1 = lookbookImagesGladio[14];
+const image_708d5dce66f5dcc676ed983d954f38f5b95afe5b = lookbookImagesGladio[15];
+const image_02dc1c2f756a60cdc6477ac890a405cc1ef402da = lookbookImagesGladio[16];
+const image_2df32c9774b82194b53fc705f9c6d4829b5ca0e0 = lookbookImagesGladio[17];
+
+// Variabili aggiuntive per altri array
+const image_672df381cabdb8014754438c02c7657797c99db3 = getImageUrl(imageFiles.img20);
+
+// Tabula Rasa project images
+const image_b49cf72e74da069ebed394558c6fcb7b64bdc944 = getImageUrl(imageFiles.img30);
+const image_85e1ffc87b6d749554d346e2d45fe40f72a9c70c = getImageUrl(imageFiles.img27);
+const image_2d244e5b302b9c523b2e948e6ab2d8a48e777891 = getImageUrl(imageFiles.img29);
+const image_e700cd453546c507261cdb7afecab790184b89d3 = getImageUrl(imageFiles.img31);
+const image_f8320ff2eba039f25910077471337b382289e8fd = getImageUrl(imageFiles.img32);
+
+// Akira project images
+const image_0a11200e98d6e5b219b006bf1e3e398bb3688a7e = getImageUrl(imageFiles.img19);
+const image_e93509f3c9c80a19067382f176094e7447824235 = getImageUrl(imageFiles.img18);
+const image_d5d51661c2b1b71a09720c90e601e1a1067c173b = getImageUrl(imageFiles.img17);
+const image_46ba3d2657ad104c15e23cff6bba1eefe7027b39 = getImageUrl(imageFiles.img16);
+const image_c8b86b3fb0bf0091e1696e8fb50bc13f877c03df = getImageUrl(imageFiles.img15);
+const image_7a229bc8bf0221c527a904213703a3c924154140 = getImageUrl(imageFiles.img14);
+const image_218e1290bc6f40e01b937549d9453ab7e47084b6 = getImageUrl(imageFiles.img13);
+const image_73bfc2c80dfd66052d5c7cbfad68a9e4dada8314 = getImageUrl(imageFiles.img12);
+
+// Lookbook additional images
+const image_d30bd798930c8661f28a37c80e6de829a3bda9e6 = getImageUrl(imageFiles.img48);
+const image_22fc33b65f83a50726f8b012c985f87143596f3d = getImageUrl(imageFiles.img47);
+const image_fd09b44a51e1bace8f760584aabf1e286a4363f4 = getImageUrl(imageFiles.img46);
+const image_18d0a9bcdd5fa0562e179bd723972c0376f829a7 = getImageUrl(imageFiles.img45);
+const image_903a90f7612deed85df8e5b88de0409faaa0f064 = getImageUrl(imageFiles.img44);
+const image_f2be377a6e0775607a7efb78a51c689fd349546c = getImageUrl(imageFiles.img43);
+const image_34c6a284abdbed2330a29648f5c4664ab88546b2 = getImageUrl(imageFiles.img42);
+const image_e3d58225740db3f188a5d48af2ddd8c118ed513f = getImageUrl(imageFiles.img41);
+const image_2dd2b8508142ff7e53ad2dfda83f02bc9594ccce = getImageUrl(imageFiles.img40);
+const image_091ef3a0ff65609876ddb92fc9932866cbccd3f2 = getImageUrl(imageFiles.img39);
+const image_ba4f79a0108791fefd21ec62c8b2a2bad8e2825b = getImageUrl(imageFiles.img38);
+const image_a3ceaaf83c60b0e8597f27a58d38af5471860418 = getImageUrl(imageFiles.img37);
+const image_e3cb4e47f7fc948810edebe4e42a8578489a0d79 = getImageUrl(imageFiles.img36);
+const image_711fc12c3189a2d90da2c1cf0fbfbc917ba227f0 = getImageUrl(imageFiles.img35);
+const image_04079bed68683ac8ea7b00772ae0ec142047c0fd = getImageUrl(imageFiles.img34);
+const image_41c8c19399749983bd08fe880502655f938816a7 = getImageUrl(imageFiles.img26);
+const image_653ced26d03657f5540d83c70d63d2bdae8db51e = getImageUrl(imageFiles.img25);
+const image_e6573b0d87a01cf1bb6a35fd190e6fc862fc7781 = getImageUrl(imageFiles.img24);
+const image_5e2175e7b4d3e8564beaa55cb21a73c9f62b3ba2 = getImageUrl(imageFiles.img23);
+const image_046b650602c286bb94dbb62991852cc04a124751 = getImageUrl(imageFiles.img22);
+const image_600bd13fa4318d315e14ae2f5fc29b1f2e5f71fe = getImageUrl(imageFiles.img21);
 
 interface ProjectDetailProps {
   projectIndex: number;

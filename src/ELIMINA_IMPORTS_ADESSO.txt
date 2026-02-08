@@ -1,0 +1,128 @@
+=================================================================
+🔥 CAPITO IL PROBLEMA!
+=================================================================
+
+Il file `/components/ProjectDetail.tsx` ha ancora **98 import figma:asset** 
+alle righe 1-130.
+
+Questi import NON sono file PNG fisici, ma Vite cerca di bundlarli 
+causando il problema.
+
+=================================================================
+✅ SOLUZIONE - ESEGUI QUESTI COMANDI:
+=================================================================
+
+1. Scarica il file fixato:
+   
+   curl -o /tmp/fix-header.txt https://raw.githubusercontent.com/salvatori780-bit/imagesportfoliooo/main/fix-project-detail-header.txt
+   
+   (Se non funziona, continua con opzione B)
+
+2. Opzione A: Usa lo script Python che ho creato:
+   
+   python3 scripts/fix-project-detail.py
+   
+3. Opzione B: Manuale
+
+   Apri `/components/ProjectDetail.tsx`
+   
+   ELIMINA le righe 1-131 (TUTTE quelle con import figma:asset)
+   
+   AGGIUNGI all'inizio:
+
+// IMMAGINI DA GITHUB - Lazy Loading
+import { motion, AnimatePresence } from 'motion/react';
+import { X, BookOpen, ArrowLeft, Upload, FileText, Check, Languages } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { saveImage, getImage, getAllImages } from '../utils/imageStorage';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import { projectTranslations } from './projectTranslations';
+import { getMarcelImages, getGraphicsImages, getPrigionieriImages, getGladioImages, getLookbookImages, getImageUrl, imageFiles } from '../utils/projectImages';
+
+const marcelImagesArray = getMarcelImages();
+const graphicsImages = getGraphicsImages();
+const prigionieriImagesArray = getPrigionieriImages();
+const gladioImagesArray = getGladioImages();
+const lookbookImagesGladio = getLookbookImages();
+
+const marcelImage1 = marcelImagesArray[0];
+const marcelImage2 = marcelImagesArray[1];
+const marcelImage3 = marcelImagesArray[2];
+const marcelImage4 = marcelImagesArray[3];
+const marcelImage5 = marcelImagesArray[4];
+const marcelImage6 = marcelImagesArray[5];
+const marcelImage7 = marcelImagesArray[6];
+
+const image_gladio_1 = gladioImagesArray[0];
+const image_gladio_2 = gladioImagesArray[1];
+const image_6 = gladioImagesArray[2];
+const image_5 = gladioImagesArray[3];
+const image_7 = gladioImagesArray[4];
+const image_8 = gladioImagesArray[5];
+const image_9 = gladioImagesArray[6];
+const image_10 = gladioImagesArray[7];
+const image_11 = gladioImagesArray[8];
+const image_12 = gladioImagesArray[9];
+const image_13 = gladioImagesArray[10];
+const image_14 = gladioImagesArray[11];
+const image_15 = gladioImagesArray[12];
+
+const image_267fb24c81eab5a763df6ff9cbfc156ccd47fd16 = prigionieriImagesArray[0];
+const image_e0ee7d605cdce8368bd0f37ad1067c87cfb92517 = prigionieriImagesArray[1];
+const image_8841b8980b55ae583f91808ba5296810558afc0c = prigionieriImagesArray[2];
+const image_827a7c43d3b9726a8e3b3c34068d16cada00a278 = prigionieriImagesArray[3];
+const image_ae9095b4b79670b547795a27344bfbb1c1371bcb = prigionieriImagesArray[4];
+const image_9f69aef6ba94980ec094ccf85a2f76e1c8f4442f = prigionieriImagesArray[5];
+const image_5c36cb5b169722c6e6fdd053bcda4f80d86e2803 = prigionieriImagesArray[6];
+const image_02ac84fbc553c23f410c592569e7a9ab98f01da0 = prigionieriImagesArray[7];
+const image_95164f811ef1fb5598130ada0b917f2e066fefbd = prigionieriImagesArray[8];
+const image_a9d6601be4fa3e71b930add370c78cc92e75ab11 = prigionieriImagesArray[9];
+
+const image_fb72a4ffd32ad468c22c65ed131d62c2547d4106 = lookbookImagesGladio[0];
+const image_726852eda92e8f69eafeec51caa5b5a9dd8d02e3 = lookbookImagesGladio[1];
+const image_bf89950957a1549f540206338688b8953d96defa = lookbookImagesGladio[2];
+const image_e698f94714f6cb88e452c9d46336d0a0c64ff282 = lookbookImagesGladio[3];
+const image_8ac6fff55297cc66082fd3d57c961f868fe810fb = lookbookImagesGladio[4];
+const image_aa42da660bad9b695d23d4b6441bbd44be1ce48c = lookbookImagesGladio[5];
+const image_85fe137110ca28cbccfd8bdb0da50292f7ef13cb = lookbookImagesGladio[6];
+const image_8a792c56c3b5680bcfd924067cb98f2fc3e10e46 = lookbookImagesGladio[7];
+const image_223e95ff32190ecc84a253b87efae5089d57545e = lookbookImagesGladio[8];
+const image_0725ae9e28025979b9c83c2b1886f492e2858994 = lookbookImagesGladio[9];
+const image_2324d3b752ec65bc4aee210f980b5861c901968f = lookbookImagesGladio[10];
+const image_7e7aa8e4078e091d3bf68073f03efef7ce9f11f4 = lookbookImagesGladio[11];
+const image_0a66af93681dcb0045c6851c7cfb3c5af5f86379 = lookbookImagesGladio[12];
+const image_7c6dfbaee291ee284b755a39666475a8f5eee6bc = lookbookImagesGladio[13];
+const image_80d710de0c769c57bda09fa4042cfe35dfbb20b1 = lookbookImagesGladio[14];
+const image_708d5dce66f5dcc676ed983d954f38f5b95afe5b = lookbookImagesGladio[15];
+const image_02dc1c2f756a60cdc6477ac890a405cc1ef402da = lookbookImagesGladio[16];
+const image_2df32c9774b82194b53fc705f9c6d4829b5ca0e0 = lookbookImagesGladio[17];
+
+const image_672df381cabdb8014754438c02c7657797c99db3 = getImageUrl(imageFiles.img20);
+
+
+   
+   4. SALVA il file
+   
+   5. VERIFICA:
+      grep -c "figma:asset" components/ProjectDetail.tsx
+      
+      Deve dire: 0
+   
+   6. Build:
+      npm run build
+   
+   7. Deploy:
+      git add . && git commit -m "fix: Remove figma:asset imports" && git push
+
+=================================================================
+✅ FATTO!
+=================================================================
+
+Le immagini dei 6 progetti (Gladio, Prigionieri, Tabula Rasa, Akira, 
+Marcel, Print Design) verranno caricate da GitHub invece di essere 
+bundlate da Vite.
+
+Bundle: da 390 MB a < 10 MB
+Deploy Vercel: SUCCESS garantito
+
+=================================================================
